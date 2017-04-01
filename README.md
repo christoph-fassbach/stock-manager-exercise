@@ -5,19 +5,20 @@ The task is to develop a stock management as a Rest-Microservice in your favouri
 The project should be checked into a public code repository of your choice like Github, Bitbucket or Gitlab. It must contain tests and run out of the box, i.e. should not require manual installation of other components. Use a build system of your choice (e.g. Maven, SBT, Gradle).
 
 ## Short manual:
-=============
 
-## Building:
----------
+
+### Building:
+
 mvn clean install 
-potentially with -Dmaven.test.skip=true
+potentially with -Dmaven.test.skip=true - the tests do delete the "DB" otherwise!
 
-## Running:
---------
+### Running:
+
 mvn spring-boot:run
+potentially with -Dmaven.test.skip=true - the tests do delete the "DB" otherwise!
 
 ## API:
-----
+
 buy: http://localhost:8080/stock/buy/<product name>/<amount>
 refill: http://localhost:8080/stock/refill/<product name>/<amount>
 reserve: http://localhost:8080/stock/reserve/<product name>/<amount>
@@ -25,5 +26,5 @@ reserve: http://localhost:8080/stock/reserve/<product name>/<amount>
 buy reserved: http://localhost:8080/stock/reserve/<product name>/<reservation key>/<amount>
 
 ## Persistence:
-------------
+
 stock.json in main folder.
