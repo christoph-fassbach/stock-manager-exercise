@@ -17,7 +17,7 @@ potentially with -Dmaven.test.skip=true - the tests do delete the "DB" otherwise
 mvn spring-boot:run
 potentially with -Dmaven.test.skip=true - the tests do delete the "DB" otherwise!
 
-## API:
+### API:
 
 buy: http://localhost:8080/stock/buy/<product name>/<amount>
 refill: http://localhost:8080/stock/refill/<product name>/<amount>
@@ -25,6 +25,6 @@ reserve: http://localhost:8080/stock/reserve/<product name>/<amount>
 (returns: reservation key)
 buy reserved: http://localhost:8080/stock/reserve/<product name>/<reservation key>/<amount>
 
-## Persistence:
+### Persistence:
 
 stock.json in main folder.
