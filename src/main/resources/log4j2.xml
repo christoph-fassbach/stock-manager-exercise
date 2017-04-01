@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console
+            name="Console"
+            target="SYSTEM_OUT">
+            <PatternLayout pattern="%-5level %d{HH:mm:ss.SSS} [%t] %logger{1} - %msg%n"/>
+        </Console>
+        <RollingRandomAccessFile
+            name="File"
+            fileName="/var/log/stock/stock.log"
+            filePattern="/var/log/stock/stock-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%-5level %d{HH:mm:ss.SSS} [%t] %logger{1} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy
+                    interval="1"
+                    modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="14"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+        <Logger
+            name="stock"
+            level="trace">
+        </Logger>
+        <Logger
+            name="io.netty"
+            level="warn">
+        </Logger>
+    </Loggers>
+</Configuration>
